@@ -8,7 +8,6 @@
 
 
 #include <iostream>
-#include <stdio.h>
 
 using namespace std;
 
@@ -33,16 +32,24 @@ public:
     
     friend ostream & operator << (ostream &output, Fraction &);
     
-    // find the Greatest Commone Divisor of two numbers
-    int static GCD(int x, int y) {
-        if (y == 0) {
-            return x;
-        } else {
-            return GCD (y, x % y);
-        }
-    }
+    // static function:
+    // find the Greatest Common Divisor of two numbers
+    int static GCD(int x, int y);
     
 };
+
+int Fraction::GCD(int x, int y) {
+    if (y == 0) {
+        return x;
+    } else {
+        return GCD (y, x % y);
+    }
+}
+
+Fraction::Fraction (int num) {
+    nominator = num;
+    denominator = 1;
+}
 
 Fraction::Fraction (int num_1, int num_2) {
     int divisor = Fraction::GCD (num_1, num_2);
@@ -89,7 +96,6 @@ ostream & operator << (ostream &output, Fraction &A) {
     if (A.denominator != 1) {
         output << "/" << A.denominator;
     }
-    
     return output;
 }
 
