@@ -9,65 +9,63 @@
 #include "Fraction.hpp"
 #include <iostream>
 
-using namespace std;
-
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    cout << "Begin\n";
+    std::cout << "Begin\n";
     
     Fraction a = Fraction();// operand 1
  
     Fraction b = Fraction();// operand 2
     
-    cout << "Please Input the 1st fraction: " << endl;
+    std::cout << "Please Input the 1st fraction: " << std::endl;
     
-    cin >> a;
-    cout << "Your Input = ";
-    cout << a << endl;
+    std::cin >> a;
+    std::cout << "Your Input = ";
+    std::cout << a << std::endl;
     
-    cout << "Please Input the 2nd fraction: " << endl;
+    std::cout << "Please Input the 2nd fraction: " << std::endl;
     
-    cin >> b;
-    cout << "Your Input = ";
-    cout << b << endl;
+    std::cin >> b;
+    std::cout << "Your Input = ";
+    std::cout << b << std::endl;
     
-    cout << "Choose operation: (input number)" << endl;
-    cout << "1 : addition(+)" << endl;
-    cout << "2 : substraction(-)" << endl;
-    cout << "3 : multiplication(*)" << endl;
-    cout << "4 : division(/)" << endl;
+    std::cout << "Choose operation: (input number)" << std::endl;
+    std::cout << "1 : addition(+)" << std::endl;
+    std::cout << "2 : substraction(-)" << std::endl;
+    std::cout << "3 : multiplication(*)" << std::endl;
+    std::cout << "4 : division(/)" << std::endl;
     
     int choice;
     
-    cin >> choice;
+    std::cin >> choice;
     
     Fraction cal_result;
     
     switch (choice) {
         case 1:
-            cout << "Addtion(+)" << endl;
+            std::cout << "Addtion(+)" << std::endl;
             cal_result = a + b;
             break;
         case 2:
-            cout << "Substract(-)" << endl;
+            std::cout << "Substract(-)" << std::endl;
             cal_result = a - b;
             break;
         case 3:
-            cout << "Multiple(*)" << endl;
+            std::cout << "Multiple(*)" << std::endl;
             cal_result = a * b;
             break;
         case 4:
-            cout << "Divide(/)" << endl;
+            std::cout << "Divide(/)" << std::endl;
             cal_result = a / b;
             break;
         default:
-            cout << "Invalid Choice" << endl;
+            std::cout << "Invalid Choice" << std::endl;
             break;
     }
     
     
-    cout << "Calculation Result = " << cal_result << endl;
+    std::cout << "Calculation Result = " << cal_result << std::endl;
     
     
     

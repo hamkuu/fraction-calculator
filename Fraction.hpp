@@ -12,8 +12,6 @@
 #include <stdio.h>
 #include <iostream>
 
-using namespace std;
-
 class Fraction {
 private:
     int nominator;
@@ -34,9 +32,9 @@ public:
     
     friend Fraction operator / (const Fraction &, const Fraction &);
     
-    friend ostream & operator << (ostream &output, Fraction &);
+    friend std::ostream & operator << (std::ostream &output, Fraction &);
     
-    friend istream & operator >> (istream &input, Fraction &);
+    friend std::istream & operator >> (std::istream &input, Fraction &);
     
     // static function:
     // find the Greatest Common Divisor of two numbers

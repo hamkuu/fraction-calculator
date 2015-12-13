@@ -8,10 +8,6 @@
 
 #include "Fraction.hpp"
 
-
-using namespace std;
-
-
 int Fraction::GCD(int x, int y) {
     if (y == 0) {
         return x;
@@ -70,7 +66,7 @@ Fraction operator / (const Fraction &A, const Fraction &B) {
     return Fraction (nominator / divisor, denominator / divisor);
 }
 
-ostream & operator << (ostream &output, Fraction &A) {
+std::ostream & operator << (std::ostream &output, Fraction &A) {
     output << A.nominator;
     if (A.denominator != 1) {
         output << "/" << A.denominator;
@@ -78,11 +74,11 @@ ostream & operator << (ostream &output, Fraction &A) {
     return output;
 }
 
-istream & operator >> (istream &input, Fraction &A) {
-    cout << "nominator = ";
-    cin >> A.nominator;
-    cout << "denominator = ";
-    cin >> A.denominator;
+std::istream & operator >> (std::istream &input, Fraction &A) {
+    std::cout << "nominator = ";
+    std::cin >> A.nominator;
+    std::cout << "denominator = ";
+    std::cin >> A.denominator;
     
     // normalize Fraction:
     int divisor = Fraction::GCD(A.nominator, A.denominator);
